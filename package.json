@@ -1,0 +1,19 @@
+{
+  "name": "altitudeit-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:run": "npx cypress run",
+    "cypress:open": "npx cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.3.3"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.14.0"
+  }
+}

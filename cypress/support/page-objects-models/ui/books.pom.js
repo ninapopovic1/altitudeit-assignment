@@ -2,11 +2,19 @@ import { UNEXPECTED_STATUS_CODE_ERROR } from '../../consts/ui/errors.consts';
 import { BOOK_AMOUNT_CLASS, BOOK_WRAPPER_CLASS, ADD_TO_CART_BOOK_BUTTON_CLASS, BOOK_TITLE_CLASS } from '../../consts/ui/books.consts';
 
 class BooksPageObjectModel {
+  /**
+   * Selectors
+   */
   bookAmountText = () => cy.get(BOOK_AMOUNT_CLASS);
   bookWrapper = () => cy.get(BOOK_WRAPPER_CLASS);
   bookTitle = () => cy.get(BOOK_TITLE_CLASS);
   addToCartBookButton = () => cy.get(ADD_TO_CART_BOOK_BUTTON_CLASS);
 
+  /**
+   * Check book amount on the category page that we get from BE response for submenu item
+   * @param {*} menuItem - main menu link
+   * @param {*} submenuItem - child of submenu link
+   */
   checkBookAmount(menuItem, submenuItem) {
     cy.intercept('POST', 'category/*').as('loadBooks');
 
@@ -24,6 +32,9 @@ class BooksPageObjectModel {
     });
   }
 
+  /**
+   * Order first book on category page and then go on cart and check if book is in cart
+   */
   orderFirstBookInSection() {
     this.waitForLoadBooksRequest();
 
@@ -39,6 +50,10 @@ class BooksPageObjectModel {
       });
   }
 
+  /**
+   * Used for adding required number of books to cart, it will add in order that are displayed on page
+   * @param {*} number - number of books
+   */
   addBooksToCart(number) {
     this.waitForLoadBooksRequest();
 
@@ -48,6 +63,9 @@ class BooksPageObjectModel {
     }
   }
 
+  /**
+   * Intercept used to wait for fetch books call
+   */
   waitForLoadBooksRequest() {
     cy.intercept('POST', 'category/*').as('loadBooks');
     cy.wait('@loadBooks');

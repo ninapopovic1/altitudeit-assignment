@@ -15,6 +15,10 @@ import {
 } from '../../consts/ui/navigation.consts';
 
 class NavigationPageObjectModel {
+  /**
+   * Selectors
+   */
+
   //Menu item button wrappers
   menuItemBookParent = () => cy.get(MENU_ITEMS_PARENT_CLASS).first();
   menuItemEbooksParent = () => cy.get(MENU_ITEMS_PARENT_CLASS).eq(1);
@@ -36,11 +40,21 @@ class NavigationPageObjectModel {
   childrensBookSubmenuItem = () => this.ebooksSubmenu().find(SUBMENU_ITEM_CLASS).first();
 
   //Methods
+
+  /**
+   * Navigate to url when clicking on the main menu links
+   * @param {*} menuItem - Name of the menu item we want to click
+   */
   navigateByMenuItemClick(menuItem) {
     const pageUrl = this.clickOnMenuItemAndReturnUrl(menuItem);
     this.checkIsUrlCorrect(pageUrl);
   }
 
+  /**
+   * Find selector based on the menuItem and click on it
+   * @param {*} menuItem  - Name of the menu item we want to click
+   * @returns - Url for the page
+   */
   clickOnMenuItemAndReturnUrl(menuItem) {
     switch (menuItem) {
       case NavigationMenuItem.BOOK:
@@ -52,6 +66,11 @@ class NavigationPageObjectModel {
     }
   }
 
+  /**
+   * Navigate to url when clicking on the submenu links
+   * @param {*} menuItem - Name of the menu item we want to click
+   * @param {*} submenuItem - Name of the submenu item we want to click
+   */
   navigateBySubmenuItem(menuItem, submenuItem) {
     this.hoverOnMenuItemAndCheckSubmenu(menuItem);
 
@@ -60,6 +79,10 @@ class NavigationPageObjectModel {
     cy.hideSubmenu();
   }
 
+  /**
+   * Find main menu item and hover over it to display submenu
+   * @param {*} menuItem - Name of the menu item we want to hover over
+   */
   hoverOnMenuItemAndCheckSubmenu(menuItem) {
     switch (menuItem) {
       case NavigationMenuItem.BOOK:
@@ -73,6 +96,11 @@ class NavigationPageObjectModel {
     }
   }
 
+  /**
+   * Find selector based on the submenuItem and click on it
+   * @param {*} submenuItem  - Name of the submenu item we want to click
+   * @returns - Url for the page
+   */
   clickOnSubmenuItem(submenuItem) {
     switch (submenuItem) {
       case NavigationSubmenuItem.FICTION:
@@ -87,6 +115,10 @@ class NavigationPageObjectModel {
     }
   }
 
+  /**
+   * Check if url is ok after redirection on menu item click
+   * @param {*} pageUrl - Url that needs to be
+   */
   checkIsUrlCorrect(pageUrl) {
     cy.url().should('include', CATEGORIE_PREIX);
 

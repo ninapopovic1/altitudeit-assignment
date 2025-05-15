@@ -12,7 +12,7 @@ import {
   TRAVEL_GUIDE_URL,
   CHILDRENS_BOOK_URL,
   SUBMENU_ITEM_CLASS,
-} from "../consts/navigation.consts";
+} from '../consts/navigation.consts';
 
 class NavigationPageObjectModel {
   //Menu item button wrappers
@@ -29,14 +29,11 @@ class NavigationPageObjectModel {
   ebooksSubmenu = () => cy.get(SUBMENU_CLASS).eq(1);
 
   //Books submenu items
-  fictionSubmenuItem = () =>
-    this.booksSubmenu().find(SUBMENU_ITEM_CLASS).first();
-  travelGuideSubmenuItem = () =>
-    this.booksSubmenu().find(SUBMENU_ITEM_CLASS).eq(2);
+  fictionSubmenuItem = () => this.booksSubmenu().find(SUBMENU_ITEM_CLASS).first();
+  travelGuideSubmenuItem = () => this.booksSubmenu().find(SUBMENU_ITEM_CLASS).eq(2);
 
   //Ebooks submenu items
-  childrensBookSubmenuItem = () =>
-    this.ebooksSubmenu().find(SUBMENU_ITEM_CLASS).first();
+  childrensBookSubmenuItem = () => this.ebooksSubmenu().find(SUBMENU_ITEM_CLASS).first();
 
   //Methods
   navigateByMenuItemClick(menuItem) {
@@ -67,11 +64,11 @@ class NavigationPageObjectModel {
     switch (menuItem) {
       case NavigationMenuItem.BOOK:
         this.menuItemBookParent().realHover();
-        this.booksSubmenu().should("be.visible");
+        this.booksSubmenu().should('be.visible');
         break;
       case NavigationMenuItem.EBOOK:
         this.menuItemEbooksParent().realHover();
-        this.ebooksSubmenu().should("be.visible");
+        this.ebooksSubmenu().should('be.visible');
         break;
     }
   }
@@ -91,7 +88,7 @@ class NavigationPageObjectModel {
   }
 
   checkIsUrlCorrect(pageUrl) {
-    cy.url().should("include", CATEGORIE_PREIX);
+    cy.url().should('include', CATEGORIE_PREIX);
 
     //Need to decode because German letters
     cy.url().then((url) => {

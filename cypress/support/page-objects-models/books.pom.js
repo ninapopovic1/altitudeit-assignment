@@ -31,8 +31,7 @@ class BooksPageObjectModel {
   }
 
   orderFirstBookInSection() {
-    cy.intercept("POST", "category/*").as("loadBooks");
-    cy.wait("@loadBooks");
+    this.waitForLoadBooksRequest();
 
     this.bookWrapper()
       .first()
@@ -48,6 +47,24 @@ class BooksPageObjectModel {
 
         cy.checkItemInCartByTitle(text);
       });
+  }
+
+  addBooksToCart(number) {
+    this.waitForLoadBooksRequest();
+
+    for (let i = 0; i < number; i++) {
+      this.bookWrapper().eq(i).realHover();
+      this.bookWrapper()
+        .eq(i)
+        .find(ADD_TO_CART_BOOK_BUTTON_CLASS)
+        .should("be.visible")
+        .click();
+    }
+  }
+
+  waitForLoadBooksRequest() {
+    cy.intercept("POST", "category/*").as("loadBooks");
+    cy.wait("@loadBooks");
   }
 }
 

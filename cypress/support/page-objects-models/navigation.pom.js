@@ -60,8 +60,7 @@ class NavigationPageObjectModel {
 
     const pageUrl = this.clickOnSubmenuItem(submenuItem);
     this.checkIsUrlCorrect(pageUrl);
-
-    cy.get("body").realMouseMove(0, 100, { position: "center" });
+    cy.hideSubmenu();
   }
 
   hoverOnMenuItemAndCheckSubmenu(menuItem) {

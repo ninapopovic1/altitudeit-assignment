@@ -1,11 +1,8 @@
 import BooksPageObjectModel from '../../../support/page-objects-models/ui/books.pom';
 import { NavigationMenuItem, NavigationSubmenuItem } from '../../../support/consts/ui/navigation.consts';
+import '../../../support/hooks/ui-hook';
 
 describe('Books page', () => {
-  beforeEach(() => {
-    cy.visit('/');
-  });
-
   describe('Check Amount', () => {
     it('should check book amount for fiction subsection', () => {
       BooksPageObjectModel.checkBookAmount(NavigationMenuItem.BOOK, NavigationSubmenuItem.FICTION);

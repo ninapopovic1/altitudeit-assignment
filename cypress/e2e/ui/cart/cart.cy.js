@@ -1,12 +1,9 @@
 import CartPageObjectModel from '../../../support/page-objects-models/ui/cart.pom';
 import { NavigationMenuItem, NavigationSubmenuItem } from '../../../support/consts/ui/navigation.consts';
 import { CART_ITEM_TOTAL_AMOUNT_IN_CART_CSS, CART_ITEM_PRICE_CSS, CART_ITEM_OPTIONS_WRAPPER_DISABLED_CSS } from '../../../support/consts/ui/cart.consts';
+import '../../../support/hooks/ui-hook';
 
 describe('Cart', () => {
-  beforeEach(() => {
-    cy.visit('/');
-  });
-
   describe('Cart Options', () => {
     it('should add multiple items', () => {
       cy.navigateBySubmenuItem(NavigationMenuItem.EBOOK, NavigationSubmenuItem.CHILDRENS_BOOK);

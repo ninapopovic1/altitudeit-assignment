@@ -1,10 +1,7 @@
 import { NavigationMenuItem, NavigationSubmenuItem } from '../../../support/consts/ui/navigation.consts';
+import '../../../support/hooks/ui-hook';
 
 describe('Menu navigation', () => {
-  beforeEach(() => {
-    cy.visit('/');
-  });
-
   describe('Navigate By Item Click', () => {
     it('should navigate to Books page', () => {
       cy.navigateByMenuItem(NavigationMenuItem.BOOK);

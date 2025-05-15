@@ -5,6 +5,7 @@ module.exports = defineConfig({
     baseUrl: 'https://bookbox.ch',
     env: {
       apiBaseUrl: 'https://api.bookbox.ch',
+      supportFile: 'cypress/support/e2e.ts',
     },
   },
 });

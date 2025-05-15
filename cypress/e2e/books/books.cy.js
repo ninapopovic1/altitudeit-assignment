@@ -31,4 +31,15 @@ describe("Books page", () => {
       );
     });
   });
+
+  describe("Order Book", () => {
+    it("should order first book from children book section", () => {
+      cy.navigateBySubmenuItem(
+        NavigationMenuItem.EBOOK,
+        NavigationSubmenuItem.CHILDRENS_BOOK
+      );
+
+      BooksPageObjectModel.orderFirstBookInSection();
+    });
+  });
 });

@@ -1,4 +1,4 @@
-About BookBox
+**About BookBox**
 
     BookBox is an e-commerce web application where users can:
 
@@ -7,7 +7,7 @@ About BookBox
     - Add/remove books from cart
     - Checkout and pay with credit card
 
-Asignment
+**Asignment**
 
     Assignment for this task was to create automation tests for some core functionalities.
     The funcionalities that are coverd under these tests are:
@@ -21,7 +21,7 @@ Asignment
 
     There are also couple API tests for fetching books for selected category.
 
-Testing tools
+**Testing tools**
 
     Testing tool: Cypress
 
@@ -36,18 +36,18 @@ Testing tools
         No Multi-Tab or Cross-Domain Testing
         Frontend Focused
 
-Setup
+**Setup**
 
     To run this project:
         - First clone git repo
         - Open terminal and install required dependecies with command npm i
         - To run tests use npm run cypress:open for GUI or npm run cypress:run for headles
 
-Problems
+**Problems**
 
     Some of the issue that are faces:
 
         - Lack of test ids, need to use css selectors and that can sometimes lead to not wanted results.
         - HTML structure on some elements is not aligned with others
-        - Lack of selectors inside HTML (example: tr do not have any selectors)
+        - Lack of selectors inside HTML (example: **tr** do not have any selectors)
         - Issues with hover

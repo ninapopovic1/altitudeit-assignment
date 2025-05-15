@@ -1,5 +1,5 @@
-import { UNEXPECTED_STATUS_CODE_ERROR } from '../consts/errors.consts';
-import { BOOK_AMOUNT_CLASS, BOOK_WRAPPER_CLASS, ADD_TO_CART_BOOK_BUTTON_CLASS, BOOK_TITLE_CLASS } from '../consts/books.consts';
+import { UNEXPECTED_STATUS_CODE_ERROR } from '../../consts/ui/errors.consts';
+import { BOOK_AMOUNT_CLASS, BOOK_WRAPPER_CLASS, ADD_TO_CART_BOOK_BUTTON_CLASS, BOOK_TITLE_CLASS } from '../../consts/ui/books.consts';
 
 class BooksPageObjectModel {
   bookAmountText = () => cy.get(BOOK_AMOUNT_CLASS);

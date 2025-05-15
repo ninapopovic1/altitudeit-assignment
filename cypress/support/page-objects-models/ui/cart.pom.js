@@ -8,7 +8,7 @@ import {
   CART_TOTAL_PRICE_CSS,
   CART_ITEM_PRICE_CSS,
   CART_ITEMS_TOTAL_WRAPPER_PRICE_CSS,
-} from '../consts/cart.consts';
+} from '../../consts/ui/cart.consts';
 
 class CartPageObjectModel {
   cartHeader = () => cy.get(CART_HEADER_ICON_CSS);

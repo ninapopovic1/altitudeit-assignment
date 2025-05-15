@@ -1,6 +1,6 @@
-import CartPageObjectModel from '../../../support/page-objects-models/cart.pom';
-import { NavigationMenuItem, NavigationSubmenuItem } from '../../../support/consts/navigation.consts';
-import { CART_ITEM_TOTAL_AMOUNT_IN_CART_CSS, CART_ITEM_PRICE_CSS, CART_ITEM_OPTIONS_WRAPPER_DISABLED_CSS } from '../../../support/consts/cart.consts';
+import CartPageObjectModel from '../../../support/page-objects-models/ui/cart.pom';
+import { NavigationMenuItem, NavigationSubmenuItem } from '../../../support/consts/ui/navigation.consts';
+import { CART_ITEM_TOTAL_AMOUNT_IN_CART_CSS, CART_ITEM_PRICE_CSS, CART_ITEM_OPTIONS_WRAPPER_DISABLED_CSS } from '../../../support/consts/ui/cart.consts';
 
 describe('Cart', () => {
   beforeEach(() => {

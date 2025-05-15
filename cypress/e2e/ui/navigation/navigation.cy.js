@@ -1,4 +1,4 @@
-import { NavigationMenuItem, NavigationSubmenuItem } from '../../../support/consts/navigation.consts';
+import { NavigationMenuItem, NavigationSubmenuItem } from '../../../support/consts/ui/navigation.consts';
 
 describe('Menu navigation', () => {
   beforeEach(() => {

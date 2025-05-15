@@ -1,14 +1,14 @@
 import 'cypress-real-events';
-import NavigationPageObjectModel from './page-objects-models/navigation.pom';
-import CartPageObjectModel from './page-objects-models/cart.pom';
-import BooksPageObjectModel from './page-objects-models/books.pom';
+import NavigationPageObjectModel from './page-objects-models/ui/navigation.pom';
+import CartPageObjectModel from './page-objects-models/ui/cart.pom';
+import BooksPageObjectModel from './page-objects-models/ui/books.pom';
 
 Cypress.Commands.add('navigateByMenuItem', (menuItem) => {
   NavigationPageObjectModel.navigateByMenuItemClick(menuItem);
 });
 
 Cypress.Commands.add('navigateBySubmenuItem', (menuItem, submenuItem) => {
-  NavigationPageObjectModel.navigateToSubmenuItem(menuItem, submenuItem);
+  NavigationPageObjectModel.navigateBySubmenuItem(menuItem, submenuItem);
 });
 
 Cypress.Commands.add('checkItemInCartByTitle', (title) => {

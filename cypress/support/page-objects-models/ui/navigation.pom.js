@@ -12,7 +12,7 @@ import {
   TRAVEL_GUIDE_URL,
   CHILDRENS_BOOK_URL,
   SUBMENU_ITEM_CLASS,
-} from '../consts/navigation.consts';
+} from '../../consts/ui/navigation.consts';
 
 class NavigationPageObjectModel {
   //Menu item button wrappers
@@ -52,7 +52,7 @@ class NavigationPageObjectModel {
     }
   }
 
-  navigateToSubmenuItem(menuItem, submenuItem) {
+  navigateBySubmenuItem(menuItem, submenuItem) {
     this.hoverOnMenuItemAndCheckSubmenu(menuItem);
 
     const pageUrl = this.clickOnSubmenuItem(submenuItem);

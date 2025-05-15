@@ -1,5 +1,5 @@
-import BooksPageObjectModel from '../../../support/page-objects-models/books.pom';
-import { NavigationMenuItem, NavigationSubmenuItem } from '../../../support/consts/navigation.consts';
+import BooksPageObjectModel from '../../../support/page-objects-models/ui/books.pom';
+import { NavigationMenuItem, NavigationSubmenuItem } from '../../../support/consts/ui/navigation.consts';
 
 describe('Books page', () => {
   beforeEach(() => {
